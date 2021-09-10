@@ -83,22 +83,22 @@ const sendEnvelopeUsingEmbeddedSending = async (req,res) => {
     env.emailSubject = "Please sign this document set";
   
     // add the documents
-    let doc1 = new docusign.Document(),
-      doc1b64 = Buffer.from(document1(args)).toString("base64"),
-      doc2b64 = Buffer.from(doc2DocxBytes).toString("base64");
-     doc1.documentBase64 = doc1b64;
-    doc1.name = "Order acknowledgement";
-    doc1.fileExtension = "html"; 
-    doc1.documentId = "1"; 
-
+    // let doc1 = new docusign.Document(),
+    //   doc1b64 = Buffer.from(document1(args)).toString("base64"),
+    //   doc2b64 = Buffer.from(doc2DocxBytes).toString("base64");
+    //  doc1.documentBase64 = doc1b64;
+    // doc1.name = "Order acknowledgement";
+    // doc1.fileExtension = "html"; 
+    // doc1.documentId = "1"; 
+    var doc2b64 = Buffer.from(doc2DocxBytes).toString("base64");
     let doc2 = new docusign.Document.constructFromObject({
       documentBase64: doc2b64,
       name: args.document_title, 
       fileExtension: "pdf",
-      documentId: "2",
+      documentId: "1",
     });
   
-    env.documents = [doc1, doc2];
+    env.documents = [doc2];
  
     var Allsigners =[];
     var signerEmail_list = args.signerEmail;
