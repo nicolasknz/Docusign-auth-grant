@@ -18,7 +18,7 @@ const sendEnvelopeUsingEmbeddedSending = async (req,res) => {
     
     console.log(args);
     args.accessToken = req.cookies['access-token'];
-    args.accountId = req.cookies['AccountID'];
+    args.accountId = "aadcf5c5-7833-4c7a-bf6a-10bcf85b58f3";
     args.basePath= 'https://demo.docusign.net/restapi';
     console.log("Args :",args);
     console.log("Hello I m in send Envelope",args);

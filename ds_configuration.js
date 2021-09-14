@@ -1,7 +1,7 @@
 
 exports.config = {
-    dsClientId: process.env.DS_CLIENT_ID ||"8baa1a29-df63-42c8-a2c3-48221dfd0bf3"
-  , dsClientSecret: process.env.DS_CLIENT_SECRET || "bd7c0009-f648-4adc-ad7f-174c628400a7",
+    dsClientId: process.env.DS_CLIENT_ID ||"1f7b1925-5652-4394-b6d6-784cda8273ad"
+  , dsClientSecret: process.env.DS_CLIENT_SECRET || "43c9557f-8fd3-40c0-aba7-04f487f7e06e",
     dsAcountID : "a390f5d4-71f1-4da3-a55d-06939e4521d6"
   , appUrl: process.env.DS_APP_URL || 'http://localhost:3000' // The url of the application.
   , production: false

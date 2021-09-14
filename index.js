@@ -47,9 +47,9 @@ let app = express()
   .use(passport.session())
   .use(bodyParser.urlencoded({ extended: true }))
   .get('/ds/login', (req, res, next) => {    
-    res.cookie("AccountID", dsConfig.dsAcountID, {
-      httpOnly: false,
-    });
+    // res.cookie("AccountID", dsConfig.dsAcountID, {
+    //   httpOnly: false,
+    // });
     passport.authenticate('docusign')(req, res, next);
     })
   .get('/ds/callback', [dsLoginCB1, dsLoginCB2]); // OAuth callbacks. See below
@@ -85,9 +85,9 @@ function dsLoginCB2 (req, res, next) {
     res.cookie("access-token", req.user.accessToken, {
       httpOnly: false,
     });
-    res.cookie("AccountID", dsConfig.dsAcountID, {
-      httpOnly: false,
-    });
+    // res.cookie("AccountID", dsConfig.dsAcountID, {
+    //   httpOnly: false,
+    // });
     // Most Docusign api calls require an account id. This is where you can fetch the default account id for the user 
     // and store in the session.
 
@@ -199,9 +199,9 @@ function getAccessTokenUsingRefreshToken(req, res,callback) {
           res.cookie("access-token", authRes.body.access_token, {
             httpOnly: false,
           });
-          res.cookie("AccountID", dsConfig.dsAcountID, {
-            httpOnly: false,
-          });
+          // res.cookie("AccountID", dsConfig.dsAcountID, {
+          //   httpOnly: false,
+          // });
           const accessToken = authRes.body.access_token;
           const refreshToken = authRes.body.refresh_token;
           const expiresIn = authRes.body.expires_in;
